@@ -1,6 +1,7 @@
 https://localtunnel.github.io/www/ servidor localhost
   install ---> npm install -g localtunnel
   require ----> lt --port 8000
+git commit -m "mensaje"
 
 npm install nodemon --save-dev //para tener el servidor siempre en linea;
 

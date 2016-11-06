@@ -31,15 +31,27 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
   var er1= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  var respuesta = er1.test(req.body.conte);
-  var reString= respuesta.toString();
+    var respuesta = er1.test(req.body.conte);
+  var er2= /[a-zA-Z]$/;
+    var respL=er2.test(req.body.conte);
+  var er3=/^[0-9]+$/;
+    var respN=er3.test(req.body.conte);
+
     if (respuesta==true){
+      console.log(req.body.conte,': usted ingleso un email');
       res.render("index");
-      console.log(reString);
-      }else if (respuesta==false) {
+    }else if (respL==true){
         res.render("index");
-        console.log(reString);
+        console.log(req.body.conte,': usted ingreso una cadena de letras');
+    }else if (respN==true){
+      res.render("index");
+      console.log(req.body.conte,': usted ingreso numeros');
+    }else if(respuesta==false|respL==false|respN==false){
+      res.render("index");
+      console.log(req.body.conte,': usted ingreso caracteres no validos');
+
     }
+
   });
 
 
