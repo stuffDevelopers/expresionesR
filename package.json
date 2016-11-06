@@ -1,0 +1,30 @@
+{
+  "name": "exp-regulares",
+  "version": "1.0.0",
+  "description": "proyecto de la materia Automatas y Expresiones Regulares",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stuffDevelopers/"
+  },
+  "keywords": [
+    "Jhovany-Keywords"
+  ],
+  "author": "Jhovany Morales Bruno",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-sessions": "^1.0.6",
+    "mongoose": "^4.6.6",
+    "pug": "^2.0.0-beta6",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

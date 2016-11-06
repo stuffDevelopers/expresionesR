@@ -1,0 +1,7 @@
+https://localtunnel.github.io/www/ servidor localhost
+  install ---> npm install -g localtunnel
+  require ----> lt --port 8000
+
+npm install nodemon --save-dev //para tener el servidor siempre en linea;
+
+sudo service mongod start mongodb
