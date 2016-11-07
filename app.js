@@ -30,28 +30,35 @@ app.get("/",function(req,res){
   });
 
 app.post("/",function(req,res){
-  var er1= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var respuesta = er1.test(req.body.conte);
-  var er2= /[a-zA-Z]$/;
-    var respL=er2.test(req.body.conte);
-  var er3=/^[0-9]+$/;
-    var respN=er3.test(req.body.conte);
+                                    var  resp=req.body.conte;
+                                    console.log(resp);
 
-    if (respuesta==true){
-      console.log(req.body.conte,': usted ingleso un email');
-      res.render("index");
-    }else if (respL==true){
-        res.render("index");
-        console.log(req.body.conte,': usted ingreso una cadena de letras');
-    }else if (respN==true){
-      res.render("index");
-      console.log(req.body.conte,': usted ingreso numeros');
-    }else if(respuesta==false|respL==false|respN==false){
-      res.render("index");
-      console.log(req.body.conte,': usted ingreso caracteres no validos');
+                                switch (true) {
+                                  case (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(resp)):
+                                        console.log(req.body.conte,': usted ingreso un email');
+                                        res.render("index");
+                                    break;
+                                  case (/^((961){1,1})([0-9]{7,7})$/.test(resp)):
+                                        console.log(req.body.conte,': usted ingreso un numero de tuxtla');
+                                        res.render("index");
+                                    break;
+                                    case (/^[0-9]+$/.test(resp)):
+                                          res.render("index");
+                                          console.log(req.body.conte,': usted ingreso numeros');
+                                      break;
+                                  case (/^-?[0-9]+([,\.][0-9]*)?$/.test(resp)):
+                                        console.log(req.body.conte,': usted ingleso numeros decimales');
+                                        res.render("index");
+                                    break;
+                                  case (/[a-zA-Z]$/.test(resp)):
+                                        res.render("index");
+                                        console.log(req.body.conte,': usted ingreso una cadena de letras');
+                                    break;
 
-    }
-
+                                  default:
+                                        res.render("index");
+                                        console.log(req.body.conte,': usted ingreso caracteres no validos');
+                                }
   });
 
 
