@@ -31,10 +31,10 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
                                     var  resp=req.body.conte;
-                                    console.log(resp);
+                                    //console.log(resp);
 
                                 switch (true) {
-                                  case (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(resp)):
+                                  case (/^[\w+\.\-]+@[a-zA-z]+.([a-zA-z]{2,3})$/.test(resp)):
                                         console.log(req.body.conte,': usted ingreso un email');
                                         res.render("index");
                                     break;
@@ -50,7 +50,15 @@ app.post("/",function(req,res){
                                         console.log(req.body.conte,': usted ingleso numeros decimales');
                                         res.render("index");
                                     break;
-                                  case (/[a-zA-Z]$/.test(resp)):
+                                  case (/(http)*([a-zA-z]+)([,\.][0-9]*[a-zA-z]+[,\.])([a-zA-z]{2,3})/.test(resp)):
+                                        console.log(req.body.conte,': usted ingleso una pagina web wwww');
+                                        res.render("index");
+                                    break;
+                                  case (/(function)$/.test(resp)):
+                                        console.log(req.body.conte,': ingreso una function');
+                                        res.render("index");
+                                    break;
+                                  case (/^[a-zA-Z]+$/.test(resp)):
                                         res.render("index");
                                         console.log(req.body.conte,': usted ingreso una cadena de letras');
                                     break;
