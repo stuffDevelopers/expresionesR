@@ -1,4 +1,6 @@
-# expresionesR
+# Expresiones Regulares con NodeJS
 
-primera version del Test de expresiones Regulares
-subida por keywords-JhovanyMB
+Prebas con Socket.io y mongodb.
+
+Por el momento solo funciona el modulo Socket.io
+![expresionesR](header.png)
