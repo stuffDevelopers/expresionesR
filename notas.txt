@@ -6,3 +6,18 @@ git commit -m "mensaje"
 npm install nodemon --save-dev //para tener el servidor siempre en linea;
 
 sudo service mongod start mongodb
+
+npm install [] –save
+
+npm outdated
+
+
+------------------------------------------------------------
+mongodb en Arch linux
+
+yaourt mongodb
+$ sudo systemctl start mongodb
+$ sudo mongod --config /etc/mongodb.conf #...'mongod' runs the mongodb server
+
+Now, open a new terminal, then do
+$ sudo mongo
