@@ -7,7 +7,7 @@ socket.on('messages',function(datas){
 
 function render(datas){
   var html= datas.map(function(element,index) {
-    return(` ${element.author}<br/>
+    return(` ${element.author}
              ${element.text}`);
   }).join(" ");
   document.getElementById('messages').innerHTML=html;
