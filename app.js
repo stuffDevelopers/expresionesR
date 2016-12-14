@@ -7,13 +7,13 @@ var bodyParser=require('body-parser');
 var querystring = require('querystring');
 var pug = require('pug');
 var port='8000';
-mongoose.connect("mongodb://localhost/expresiones_R");
+/*
   //definamos el schema de nuestros campos obtenidos, es el eschema que se enviara a mongodb
  var datosSchema={
    title:String,
    conte:String
  };
-var DataT=mongoose.model("DataT",datosSchema);
+var DataT=mongoose.model("DataT",datosSchema); */
 var messages=[{
   id:1,
   text: "hola soy Jhovany",
